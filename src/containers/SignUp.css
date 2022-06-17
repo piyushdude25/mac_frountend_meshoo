@@ -1,0 +1,46 @@
+.mainBoxxx{
+    border: 1px solid rgb(112, 112, 112);
+    /* display: flex; */
+    width: 50%;
+    margin-top: 10% !important;
+    margin: auto;
+    padding: 2%;
+}
+
+.subBoxxx{
+    /* width: 95%; */
+    margin: auto;
+    /* height: 280px; */
+    /* border: 10px solid red !important; */
+    border: none;
+    text-align: center;
+    box-shadow: none !important;
+    
+}
+
+
+input{
+    width: 90%;
+    margin-left: -10px;
+    border-radius: 50px;
+    padding: 2% 5%;
+    cursor: pointer;
+}
+
+
+.btn{
+    margin:2% 40% 4% 40%;
+    border-radius: 50px;
+    padding: 2% 5%;
+    color: white;
+    background-color: rgb(244,51,151) ;
+    border: none;
+    width: 20%;
+   
+    
+}
+.btn:hover{
+    box-shadow: 0 0 10px 5px grey;
+    cursor: pointer;
+}
+

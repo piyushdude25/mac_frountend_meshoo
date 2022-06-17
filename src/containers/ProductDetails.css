@@ -1,0 +1,103 @@
+
+.mainBox{
+    border: 5px solid rgb(183, 236, 252);
+    border-radius: 5px;
+    width: 80% !important;
+    margin: auto;
+}
+.flex{
+    display: flex;
+}
+.leftSide{
+    /* border: 1px solid green; */
+    width: 48%;
+    margin: 5%;
+    text-align: center;
+    border-radius: 10px;
+}
+.mImg{
+    margin-top: 5%;
+    /* width: 80%; */
+    margin: auto;
+}
+.mImg>img{
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+}
+.sImg{
+    gap: 5%;
+  margin-left: 10%;
+}
+.sImg>img{
+    width: 20%;
+   
+}
+
+.rightSide{
+    padding: 0 2%;
+    border-radius: 10px;
+    width: 48%;
+    margin: 5% 5% 5% 0;
+    text-align: center;
+    text-align: left;
+   /* line-height: 95%; */
+}
+.details>p{
+    width: 27%;
+}
+.gap3{
+    gap: 3%;
+}
+.border{
+    border: 1px solid rgb(177, 172, 172);
+}
+/* .btns{
+    display: flex;
+} */
+.btns{
+border: 1px solid red;
+width: 30%;
+margin: 5%;
+padding: 2% 5%;
+/* text-decoration: none; */
+border-radius: 10px;
+border: none;
+
+color: white;
+cursor: pointer;
+}
+Button:hover{
+    box-shadow:  0 0 10px 2px grey;
+    background-color: rgb(51, 199, 236) !important;
+    color: white;
+    border: none;
+}
+.linkCBtn{
+    text-decoration: none;
+    color: white;
+}
+.imgs:hover{
+    box-shadow:  0 0 10px 2px grey;
+    cursor: pointer;
+    /* border: 1px solid red; */
+}
+.imgs{
+    border-radius: 10px;
+}
+
+
+/* buttons-cart {
+    border: 1px solid red;
+    width: 20%;
+    } */
+
+.buttons-cart Button{
+        /* border: 1px solid red; */
+        border: none;
+        width: 100%;
+        margin: auto;
+        text-decoration: underline;
+        background-color: rgb(253, 85, 172);
+        color: white;
+        }
