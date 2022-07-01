@@ -25,7 +25,7 @@ const ProductPage = () => {
 //////////for sorting...........
  const handleSorted =(order)=>{
   axios
-  .get(`https://meesho-clone2.herokuapp.com/products?_sort=price&_order=${order}`)
+  .get(`https://db-server-mesho.herokuapp.com/products?_sort=price&_order=${order}`)
   .then(({data})=>{
       console.log("sorting:",data)
       
@@ -35,14 +35,67 @@ const ProductPage = () => {
 }
 
 
-
- 
-  useEffect(() => {
+useEffect(() => {
     
-    dispatch (fetchProducts());
-    // fetchProductsxxxxxxx();
-    // handleSorted();
-   }, [order]);
+  dispatch (fetchProducts());
+  // fetchProductsxxxxxxx();
+  // handleSorted();
+ }, [order]);
+
+
+///////////////////////////////////////////////NEW SORTING TRY---------------------------------------------
+
+const [data, setData] = useState([]);
+const [value, setValue] = useState("");
+const [sortValue, setSortValue] = useState("");
+const sortOptions = ['gender'   , 'name' , 'price' , 'discount' ,'ratings']
+
+//search---
+const handleSearch = async (e)=>{
+  e.preventDefault()
+  return await axios
+  .get(`https://db-server-mesho.herokuapp.com/products?q=${value}`)
+  .then(({data})=>{
+      console.log("sorting:",data)
+      
+      dispatch(setProducts(data));
+      // dispatch(fetchProducts(data))
+  }).catch((err) => console.log(err))
+}
+
+// reset ---
+const handleReset = () => {
+  dispatch (fetchProducts());
+}
+const handleSort = async (e)=>{
+  let value = e.target.value;
+  setSortValue(value);
+  return await 
+  axios
+  .get(`https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`)
+  .then(({data})=>{
+      console.log("sorting:",data)
+      
+      dispatch(setProducts(data));
+      // dispatch(fetchProducts(data))
+  }).catch((err) => console.log(err))
+}
+
+//filter----
+const handleFilter = async (value)=>{
+  
+  return await 
+  axios
+  .get(`https://db-server-mesho.herokuapp.com/products?category=${value}`)
+  .then(({data})=>{
+      console.log("sorting:",data)
+      
+      dispatch(setProducts(data));
+      // dispatch(fetchProducts(data))
+  }).catch((err) => console.log(err))
+}
+///--------------------------------------------------------------------------------------------------------
+ 
 
 
   return (
@@ -56,19 +109,39 @@ const ProductPage = () => {
 
       <div className="sortBtns">
         {" "}
-      
-
-        <button variant="text" onClick={()=>handleSorted("asc")}>low to high</button>
-        <button variant="text" onClick={()=>handleSorted("desc")}>high to low</button>
+        {/* <button variant="text" onClick={()=>handleSorted("asc")}>low to high</button>
+        <button variant="text" onClick={()=>handleSorted("desc")}>high to low</button> */}
 
 
-     
-      
+ {/* ///////////////////////////////////////////////NEW SORTING TRY--------------------------------------------- */}
+ <div className="TRYSORTING">
+  <select name="" id="" onChange={handleSort} value={sortValue}>
+
+    <option value="">Sort by:</option>
+    {sortOptions.map((item,index) => (
+      <option value={item} key = {index}>{item}</option>
+    
+    ))}
+  </select>
+</div>
+
+{/* <div>
+<button onClick={()=> handleFilter("shirt")} > active</button>
+<button onClick={()=> handleFilter("saree")} > Inactive</button>
+</div> */}
+<button onClick={()=> handleReset()} >reset</button>
 
 
+{/* <form action="" onSubmit={handleSearch}>
+    <input type="text" placeholder="search name" value={value} onChange={(e) => setValue(e.target.value)} />
+    <button type="submit" >search</button>
+</form> */}
+{/* ///////////////////////////////////////////////NEW SORTING TRY--------------------------------------------- */}
 
 
       </div>
+
+     
 
 
       {products.length === 0 ? ( 

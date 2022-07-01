@@ -1,19 +1,22 @@
-import React, { useEffect } from "react";
-
+import React, { useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { Button } from "@mui/material";
-
-import {fetchProduct,removeSelectedProduct} from "../redux/actions/ProductAction";
-
+import {fetchProduct,removeSelectedProduct,addToCart} from "../redux/actions/ProductAction";
 import "./ProductDetails.css";
-
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Rating} from '@mui/material'
 import {ActionTypes} from "../redux/constants/action-types";
+import axios from "axios";
+
 
 const ProductDetails = () => {
+
+
   const dispatch = useDispatch();
+  const [cart, setCart] = useState({});
+// console.log("selected data:..",cart)
+
   // const { productId } = useParams();
   const { id } = useParams();
   let product = useSelector((state) => state.product);
@@ -24,22 +27,51 @@ const ProductDetails = () => {
   //   axios.get(`https://meesho123.herokuapp.com/products/${id}`)
   //   .then((response) => {
   //     console.log(response.data);
-  //     setProduct(...[response.data]);
+  //     // setProduct(...[response.data]);
   //   });
   // }, []);
 
+
+  axios
+  .get(`https://db-server-mesho.herokuapp.com/products/${id}`)
+  .then(({ data }) => {
+    setCart(data);
+  });
+
 //by thunk...
 useEffect(() => {
-  if (id && id !== "") dispatch(fetchProduct(id));
+  if (id && id !== "") {dispatch(fetchProduct(id))} ;
   return () => {
     dispatch(removeSelectedProduct());
   };
 }, []);
 
 
+
   const { Pid,image,img1,img2,img3,name,price,category,delivery,reviews, discount,sub_category,gender,product_type,ratings, description,} = product;
 
-
+  const handlesubmit = () => {
+    const payload = {
+      gender: cart.gender,
+      product_type: cart.product_type,
+      category: cart.category,
+      sub_category: cart.sub_category,
+      name: cart.name,
+      price: cart.price,
+      discount: cart.discount,
+      ratings: cart.ratings,
+      delivery: cart.delivery,
+      reviews: cart.reviews,
+      description: cart.description,
+      img1: cart.img1,
+    };
+    axios
+    .post("https://db-server-mesho.herokuapp.com/cartproduct", payload)
+    .then(({data})=> {dispatch(addToCart()) })
+    alert("Item added to Cart")
+    // .catch((e)=> {console.log(e)})
+  
+  }
 
  
   return (
@@ -85,24 +117,7 @@ useEffect(() => {
               <div>{delivery} Delivery</div>
             </div>
 
-            {/* <div className="flex gap3 ">
-              <div>
-                <h3>Category</h3>
-                <p>{category}</p>
-              </div>
-              <div>
-                <h3>Sub Category</h3>
-                <p>{sub_category}</p>
-              </div>
-              <div>
-                <h3>Gender</h3>
-                <p>{gender}</p>
-              </div>
-              <div>
-                <h3>Product Type</h3>
-                <p>{product_type}</p>
-              </div>
-            </div> */}
+           
 <br/><hr/><br/>
             <div className="details ">
               <h3>Product Details :</h3>
@@ -117,8 +132,10 @@ useEffect(() => {
           <div  className="buttons-cart">
     
 
-           <Button className="btns" variant="outlined" onClick={() => dispatch({type:ActionTypes.ADD_CART, payload:product})}>ADD TO CART</Button>
-           
+           {/* <Button className="btns" variant="outlined" onClick={() => dispatch({type:ActionTypes.ADD_CART, payload:product})}>ADD TO CART</Button> */}
+           {/* <Button className="btns" variant="outlined" onClick={()=>(handlesubmit())}>ADD TO CART</Button> */}
+           <Button className="btns" variant="outlined" onClick={()=>(dispatch(addToCart(cart)))}>ADD TO CART</Button>
+
            <span> ‎ </span>
        
            <Link to="/product/cart">  <Button className="btns" variant="outlined"> Go To Checkout</Button></Link>

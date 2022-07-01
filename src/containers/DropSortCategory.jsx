@@ -14,7 +14,7 @@ const DropSortCategory = () => {
   const dispatch = useDispatch();
 
   const handleSortedData =(query)=>{
-    axios.get(`https://meesho-clone2.herokuapp.com/products?category=${query}`).then(({data})=>{
+    axios.get(`https://frountdata.herokuapp.com/products?category=${query}`).then(({data})=>{
         console.log("catrgory:",data)
         navigate("/product");
         dispatch(setProducts(data));

@@ -490,328 +490,6 @@
       },
       {
         "product": {
-          "id": "2",
-          "gender": "female",
-          "product_type": "ethic",
-          "category": "saree",
-          "sub_category": "silk",
-          "name": "Printed Saree With Unstitched Blouse",
-          "price": 900,
-          "discount": 25,
-          "ratings": 4.2,
-          "delivery": "free",
-          "reviews": 4596,
-          "description": " Printed Saree With Unstitched Blou  Art Silk Blouse : Separate Blouse Piece",
-          "img1": "https://images.meesho.com/images/products/41115101/zzdil_512.jpg",
-          "img2": "https://images.meesho.com/images/products/41115099/uqrkd_64.jpg",
-          "img3": "https://images.meesho.com/images/products/41115101/zzdil_64.jpg",
-          "__v": 0
-        },
-        "id": "EPWvQeA"
-      },
-      {
-        "product": {
-          "id": "6",
-          "gender": "female",
-          "product_type": "ethic",
-          "category": "saree",
-          "sub_category": "silk",
-          "name": "Printed Saree With Unstitched Blouse",
-          "price": 2300,
-          "discount": 47,
-          "ratings": 4.1,
-          "delivery": "free",
-          "reviews": 1056,
-          "description": " Name : Jaipur Fabric : Rayon Sleeve Length : Three-Quarter Sleeves Pattern : PrinteCombo of : SingleSizes :M (Bust Size : 38 in)",
-          "img1": "https://images.meesho.com/images/products/7616385/0c598_512.jpg",
-          "img2": "https://images.meesho.com/images/products/7616385/0c598_512.jpg",
-          "img3": "https://images.meesho.com/images/products/7616385/0c598_512.jpg"
-        },
-        "id": "-pyApHe"
-      },
-      {
-        "product": {
-          "id": "6",
-          "gender": "female",
-          "product_type": "ethic",
-          "category": "saree",
-          "sub_category": "silk",
-          "name": "Printed Saree With Unstitched Blouse",
-          "price": 2300,
-          "discount": 47,
-          "ratings": 4.1,
-          "delivery": "free",
-          "reviews": 1056,
-          "description": " Name : Jaipur Fabric : Rayon Sleeve Length : Three-Quarter Sleeves Pattern : PrinteCombo of : SingleSizes :M (Bust Size : 38 in)",
-          "img1": "https://images.meesho.com/images/products/7616385/0c598_512.jpg",
-          "img2": "https://images.meesho.com/images/products/7616385/0c598_512.jpg",
-          "img3": "https://images.meesho.com/images/products/7616385/0c598_512.jpg"
-        },
-        "id": "ZUT7fp2"
-      },
-      {
-        "product": {
-          "id": "6",
-          "gender": "female",
-          "product_type": "ethic",
-          "category": "saree",
-          "sub_category": "silk",
-          "name": "Printed Saree With Unstitched Blouse",
-          "price": 2300,
-          "discount": 47,
-          "ratings": 4.1,
-          "delivery": "free",
-          "reviews": 1056,
-          "description": " Name : Jaipur Fabric : Rayon Sleeve Length : Three-Quarter Sleeves Pattern : PrinteCombo of : SingleSizes :M (Bust Size : 38 in)",
-          "img1": "https://images.meesho.com/images/products/7616385/0c598_512.jpg",
-          "img2": "https://images.meesho.com/images/products/7616385/0c598_512.jpg",
-          "img3": "https://images.meesho.com/images/products/7616385/0c598_512.jpg"
-        },
-        "id": "ygxPOYY"
-      },
-      {
-        "product": {
-          "id": 3,
-          "title": "Mens Cotton Jacket",
-          "price": 55.99,
-          "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-          "category": "men's clothing",
-          "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-          "rating": {
-            "rate": 4.7,
-            "count": 500
-          }
-        },
-        "id": "PRUQsK3"
-      },
-      {
-        "product": {
-          "id": "27",
-          "gender": "female",
-          "product_type": "Toys & Accessories",
-          "category": "Soft Toys",
-          "sub_category": "Fabric",
-          "name": "Long Soft Hugable American Style Teddy",
-          "price": 345,
-          "discount": 32,
-          "ratings": 5,
-          "delivery": "free",
-          "reviews": 345,
-          "description": " Printed Shirt With Unstitched   Art Silk  : Separate  Piece",
-          "img1": "https://images.meesho.com/images/products/74319655/zlp7d_512.jpg",
-          "img2": "https://images.meesho.com/images/products/20786711/443a9_64.jpgg",
-          "img3": "https://images.meesho.com/images/products/20786707/5c883_64.jpg"
-        },
-        "id": "KzpXTRi"
-      },
-      {
-        "product": {
-          "id": "27",
-          "gender": "female",
-          "product_type": "Toys & Accessories",
-          "category": "Soft Toys",
-          "sub_category": "Fabric",
-          "name": "Long Soft Hugable American Style Teddy",
-          "price": 345,
-          "discount": 32,
-          "ratings": "5",
-          "delivery": "free",
-          "reviews": "345",
-          "description": " Printed Shirt With Unstitched   Art Silk  : Separate  Piece",
-          "img1": "https://images.meesho.com/images/products/74319655/zlp7d_512.jpg",
-          "img2": "https://images.meesho.com/images/products/20786711/443a9_64.jpgg",
-          "img3": "https://images.meesho.com/images/products/20786707/5c883_64.jpg"
-        },
-        "id": "RO3UCZQ"
-      },
-      {
-        "product": {
-          "id": "27",
-          "gender": "female",
-          "product_type": "Toys & Accessories",
-          "category": "Soft Toys",
-          "sub_category": "Fabric",
-          "name": "Long Soft Hugable American Style Teddy",
-          "price": 345,
-          "discount": 32,
-          "ratings": 5,
-          "delivery": "free",
-          "reviews": 345,
-          "description": " Printed Shirt With Unstitched   Art Silk  : Separate  Piece",
-          "img1": "https://images.meesho.com/images/products/74319655/zlp7d_512.jpg",
-          "img2": "https://images.meesho.com/images/products/20786711/443a9_64.jpgg",
-          "img3": "https://images.meesho.com/images/products/20786707/5c883_64.jpg"
-        },
-        "id": "6MmDFZM"
-      },
-      {
-        "product": {
-          "id": "27",
-          "gender": "female",
-          "product_type": "Toys & Accessories",
-          "category": "Soft Toys",
-          "sub_category": "Fabric",
-          "name": "Long Soft Hugable American Style Teddy",
-          "price": 345,
-          "discount": 32,
-          "ratings": 5,
-          "delivery": "free",
-          "reviews": 345,
-          "description": " Printed Shirt With Unstitched   Art Silk  : Separate  Piece",
-          "img1": "https://images.meesho.com/images/products/74319655/zlp7d_512.jpg",
-          "img2": "https://images.meesho.com/images/products/20786711/443a9_64.jpgg",
-          "img3": "https://images.meesho.com/images/products/20786707/5c883_64.jpg"
-        },
-        "id": "iY_hyV_"
-      },
-      {
-        "product": {
-          "id": "2",
-          "gender": "female",
-          "product_type": "ethic",
-          "category": "saree",
-          "sub_category": "silk",
-          "name": "Printed Saree With Unstitched Blouse",
-          "price": 900,
-          "discount": 25,
-          "ratings": 4.2,
-          "delivery": "free",
-          "reviews": 4596,
-          "description": " Printed Saree With Unstitched Blou  Art Silk Blouse : Separate Blouse Piece",
-          "img1": "https://images.meesho.com/images/products/41115101/zzdil_512.jpg",
-          "img2": "https://images.meesho.com/images/products/41115099/uqrkd_64.jpg",
-          "img3": "https://images.meesho.com/images/products/41115101/zzdil_64.jpg",
-          "__v": 0
-        },
-        "id": "wIBXJW6"
-      },
-      {
-        "product": {
-          "id": "2",
-          "gender": "female",
-          "product_type": "ethic",
-          "category": "saree",
-          "sub_category": "silk",
-          "name": "Printed Saree With Unstitched Blouse",
-          "price": 900,
-          "discount": 25,
-          "ratings": 4.2,
-          "delivery": "free",
-          "reviews": 4596,
-          "description": " Printed Saree With Unstitched Blou  Art Silk Blouse : Separate Blouse Piece",
-          "img1": "https://images.meesho.com/images/products/41115101/zzdil_512.jpg",
-          "img2": "https://images.meesho.com/images/products/41115099/uqrkd_64.jpg",
-          "img3": "https://images.meesho.com/images/products/41115101/zzdil_64.jpg",
-          "__v": 0
-        },
-        "id": "AOeO7nM"
-      },
-      {
-        "product": {
-          "id": "2",
-          "gender": "female",
-          "product_type": "ethic",
-          "category": "saree",
-          "sub_category": "silk",
-          "name": "Printed Saree With Unstitched Blouse",
-          "price": 900,
-          "discount": 25,
-          "ratings": 4.2,
-          "delivery": "free",
-          "reviews": 4596,
-          "description": " Printed Saree With Unstitched Blou  Art Silk Blouse : Separate Blouse Piece",
-          "img1": "https://images.meesho.com/images/products/41115101/zzdil_512.jpg",
-          "img2": "https://images.meesho.com/images/products/41115099/uqrkd_64.jpg",
-          "img3": "https://images.meesho.com/images/products/41115101/zzdil_64.jpg",
-          "__v": 0
-        },
-        "id": "NbqzbXi"
-      },
-      {
-        "product": {
-          "id": "2",
-          "gender": "female",
-          "product_type": "ethic",
-          "category": "saree",
-          "sub_category": "silk",
-          "name": "Printed Saree With Unstitched Blouse",
-          "price": 900,
-          "discount": 25,
-          "ratings": 4.2,
-          "delivery": "free",
-          "reviews": 4596,
-          "description": " Printed Saree With Unstitched Blou  Art Silk Blouse : Separate Blouse Piece",
-          "img1": "https://images.meesho.com/images/products/41115101/zzdil_512.jpg",
-          "img2": "https://images.meesho.com/images/products/41115099/uqrkd_64.jpg",
-          "img3": "https://images.meesho.com/images/products/41115101/zzdil_64.jpg",
-          "__v": 0
-        },
-        "id": "VFmtqhh"
-      },
-      {
-        "product": {
-          "id": "15",
-          "gender": "male",
-          "product_type": "ethic",
-          "category": "shirt",
-          "sub_category": "cotton",
-          "name": "Printed Shirt",
-          "price": 500,
-          "discount": 25,
-          "ratings": 5,
-          "delivery": "free",
-          "reviews": 436,
-          "description": " Printed Shirt With Unstitched   Art Silk  : Separate  Piece",
-          "img1": "https://images.meesho.com/images/products/81723168/0gqfi_512.jpg",
-          "img2": "https://images.meesho.com/images/products/81723168/0gqfi_64.jpg",
-          "img3": "https://images.meesho.com/images/products/81723167/udu3p_64.jpg"
-        },
-        "id": "cDSIo1W"
-      },
-      {
-        "product": {
-          "id": "4",
-          "gender": "female",
-          "product_type": "ethic",
-          "category": "kurti",
-          "sub_category": "silk",
-          "name": "Printed Saree With Unstitched Blouse",
-          "price": 1200,
-          "discount": 27,
-          "ratings": 4.1,
-          "delivery": "free",
-          "reviews": 6756,
-          "description": " Name : Jaipur Fabric : Rayon Sleeve Length : Three-Quarter Sleeves Pattern : PrinteCombo of : SingleSizes :M (Bust Size : 38 in)",
-          "img1": "https://images.meesho.com/images/products/286347/1_512.jpg",
-          "img2": "https://images.meesho.com/images/products/286347/1_512.jpg",
-          "img3": "https://images.meesho.com/images/products/286357/1_64.jpg",
-          "__v": 0
-        },
-        "id": "wiAPDC1"
-      },
-      {
-        "product": {
-          "id": "2",
-          "gender": "female",
-          "product_type": "ethic",
-          "category": "saree",
-          "sub_category": "silk",
-          "name": "Printed Saree With Unstitched Blouse",
-          "price": 900,
-          "discount": 25,
-          "ratings": 4.2,
-          "delivery": "free",
-          "reviews": 4596,
-          "description": " Printed Saree With Unstitched Blou  Art Silk Blouse : Separate Blouse Piece",
-          "img1": "https://images.meesho.com/images/products/41115101/zzdil_512.jpg",
-          "img2": "https://images.meesho.com/images/products/41115099/uqrkd_64.jpg",
-          "img3": "https://images.meesho.com/images/products/41115101/zzdil_64.jpg",
-          "__v": 0
-        },
-        "id": "nrJk-7W"
-      },
-      {
-        "product": {
           "id": "6",
           "gender": "female",
           "product_type": "ethic",
@@ -829,6 +507,33 @@
           "img3": "https://images.meesho.com/images/products/7616385/0c598_512.jpg"
         },
         "id": "o8BEGmY"
+      }
+    ],
+    "checkout":[ 
+      {
+      "input": {
+        "Name": "piyush",
+        "Address": "A324 maha",
+        "Phone": "1234567890",
+        "Pincode": "451111"      }
+    }
+  ],
+    "payment": [
+      {
+        "data": {
+          "card_number": "12345678",
+          "cvv": "123",
+          "date": "2022-05-10"
+        },
+        "id": 1
+      },
+      {
+        "data": {
+          "card_number": "12345678",
+          "cvv": "123",
+          "date": "2022-05-10"
+        },
+        "id": 2
       }
     ]
   }

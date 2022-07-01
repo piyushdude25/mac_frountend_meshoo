@@ -20,6 +20,7 @@ const ProductComponent = ({product}) => {
       <div className="subBox">
        
         <Link to={`/product/${id}`}>
+  
                     <div className="card" >
                   <div className="image">
                     <img src={img1} alt={name} />

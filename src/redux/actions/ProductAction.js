@@ -23,7 +23,8 @@ export const removeSelectedProduct = () => {
 
 //by thunk..
 export const fetchProducts = () => async  (dispatch) => {
-  const response = await Storeapi.get("/products") ;
+  const response = await Storeapi.get("/products") 
+  
   dispatch({type : ActionTypes.FETCH_PRODUCTS, payload : response.data})
     };
 
@@ -87,3 +88,91 @@ export const postProduct = (product) => async (dispatch)=> {
         type:"LOGIN_DETAIL",
         payload:data
       })
+
+
+     ////////////add_to_card/////
+    export const addToCart = (data) => {
+      // return {
+      //     type : ActionTypes.ADD_TO_CART,
+      //     data: data,
+      // }
+      return async (dispatch) => {
+      
+     const cartData =  await axios
+    .post("https://db-server-mesho.herokuapp.com/cartproduct", data)
+    // .then()
+    // alert("Item added to Cart")
+    .catch((e)=> {console.log(e); alert("Item Allready added to Cart")})
+
+    if(cartData ){
+      dispatch({ 
+        type: ActionTypes.ADD_TO_CART_SUCCESS,
+        
+        //  payload: { cartItems } 
+        });
+        alert("Item added to Cart")
+    }else{
+      dispatch({
+         type: ActionTypes.ADD_TO_CART_FAILED,
+          // payload: { cartItems }
+         });
+        
+    }
+    
+      };
+  }
+
+
+
+
+  ///get card data...........
+  export const getCartData = () => {
+    // return {
+    //     type : ActionTypes.ADD_TO_CART,
+    //     data: data,
+    // }
+    return async (dispatch) => {
+    
+   const cartData =  await axios
+  .get("https://db-server-mesho.herokuapp.com/cartproduct")
+      // console.log("cartDataaaaaaaaaa",cartData.data)
+
+  if(cartData ){
+    dispatch({ 
+      type: ActionTypes.GET_CART_DATA_SUCCESS,
+       payload:  cartData.data 
+      });
+  }else{
+    dispatch({
+       type: ActionTypes.GET_CART_DATA_FAILED,
+        // payload: { cartItems }
+       });
+  }
+    };
+}
+
+
+
+///delete card data...........
+// export const deleteCartData = () => {
+ 
+//   return async (dispatch) => {
+  
+//  const cartData =  await axios
+// .delete(`https://db-server-mesho.herokuapp.com/cartproduct/${id}`)
+//     // console.log("cartDataaaaaaaaaa",cartData.data)
+
+// if(cartData ){
+//   dispatch({ 
+//     type: ActionTypes.DELETE_CART_DATA_SUCCESS,
+//      payload:  cartData.data 
+//     });
+// }else{
+//   dispatch({
+//      type: ActionTypes.DELETE_CART_DATA_FAILED,
+//       // payload: { cartItems }
+//      });
+// }
+
+//   };
+// }

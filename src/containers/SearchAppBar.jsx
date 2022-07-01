@@ -72,16 +72,26 @@ export default function SearchAppBar() {
   const [state, setState] = useState([]);
   //const cartcount=useSelector(st=>st.cartReducer.count))
   
-  useEffect(() => {
-    axios
-      .get("https://meesho123.herokuapp.com/cart")
-      .then((res) => {
-        setState(res.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://meesho123.herokuapp.com/cart")
+  //     .then((res) => {
+  //       setState(res.data);
+  //     })
+  //     .catch((e) => {
+  //       console.log(e, "eee");
+  //     });
+  // }, []);
+
+  const [Cart, setCart] = useState([]);
+  // console.log(Cart.length, "cartlength")
+  axios
+  .get("https://db-server-mesho.herokuapp.com/cartproduct")
+  
+  .then(({ data }) => {
+    setCart(data);
+    // console.log("countProduct:...:",data.length)
+  });
 
 
 // console.log("totalItems..........", state.length)
@@ -153,7 +163,11 @@ export default function SearchAppBar() {
               <p className="hoverWhite">Cart</p>
               </Link>
             </div>
-            <span className="cartIcon">{cart}</span>
+
+                 {/* cartCount........... */}
+            {/* <span className="cartIcon">{cart}</span> */}
+            <span className="cartIcon">{Cart.length}</span>
+
           </div>
         </Toolbar>
       </AppBar>

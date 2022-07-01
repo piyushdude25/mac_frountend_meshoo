@@ -17,6 +17,9 @@ import SuccessPage from "./containers/SuccessPage";
 
 import TSignup from "./Registration/TSignup";
 import TLogin from "./Registration/TLogin";
+import NewAddress from "./containers/NewAddress";
+import NewPayment from "./containers/NewPayment";
+import NewCartpage from "./containers/NewCartpage";
 
 function App() {
   return (
@@ -26,12 +29,19 @@ function App() {
         <Route path="/" element={<HomeBottom />} />
 
         <Route exact path="/product" element={<ProductList />} />
-        <Route exact path="/product/cart" element={<Cartpage />} />
-        <Route exact path="/product/checkout" element={<Address/>}></Route>
-        <Route exact path="/product/payment" element={<Payment />} />
+
+        {/* <Route exact path="/product/cart" element={<Cartpage />} /> */}
+        <Route exact path="/product/cart" element={<NewCartpage />} />
+
+        {/* <Route exact path="/product/checkout" element={<Address/>}></Route> */}
+        <Route exact path="/product/checkout"  element={<NewAddress/>}></Route>
+
+        {/* <Route exact path="/product/payment" element={<Payment />} /> */}
+        <Route exact path="/product/payment" element={<NewPayment />} />
+
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/login" element={<LoginPage />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route exact path="/product/:id" element={<ProductDetails />} />
         <Route path="/success" element={<SuccessPage />} />
 
    <Route exact path="/tsignup" element={<TSignup />} />
