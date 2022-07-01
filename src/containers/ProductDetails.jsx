@@ -15,7 +15,7 @@ const ProductDetails = () => {
 
   const dispatch = useDispatch();
   const [cart, setCart] = useState({});
-// console.log("selected data:..",cart)
+console.log("selected data:..",cart)
 
   // const { productId } = useParams();
   const { id } = useParams();
@@ -77,7 +77,7 @@ useEffect(() => {
   return (
     <div className="ui grid container" key={id}>
      
-      {product.length ===0  ? ( 
+      {cart === undefined  ? ( 
       <img src="http://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Social_dino-with-hat.gif" style={{ width: "100%", height: "100%" }}alt=""/>
       )
       
