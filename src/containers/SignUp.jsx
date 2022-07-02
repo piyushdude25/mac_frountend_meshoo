@@ -16,7 +16,7 @@ const SignUp = () => {
   
   const handlesubmit = async (e) => {
     e.preventDefault();
-    console.log("data", formdata);
+    // console.log("data", formdata);
     await axios.post("https://meesho-website-clone.herokuapp.com/register", formdata);
     alert("registration successfully");
     navigate("/login");

@@ -19,7 +19,7 @@ const NewCartpage = () => {
 // console.log("data.....",cart)
 
 const dataCart = useSelector(state => state.getcartdataReducer.cart) 
-console.log("DATACart.....",dataCart)
+// console.log("DATACart.....",dataCart)
 
 useEffect(() => {
     // handleCartDetail();

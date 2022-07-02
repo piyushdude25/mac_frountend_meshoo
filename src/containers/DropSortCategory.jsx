@@ -15,7 +15,7 @@ const DropSortCategory = () => {
 
   const handleSortedData =(query)=>{
     axios.get(`https://frountdata.herokuapp.com/products?category=${query}`).then(({data})=>{
-        console.log("catrgory:",data)
+        // console.log("catrgory:",data)
         navigate("/product");
         dispatch(setProducts(data));
     })

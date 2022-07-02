@@ -17,7 +17,7 @@ export const LoginPage = () => {
   
   const handlesubmitL = async (e) => {
     e.preventDefault();
-    console.log("data", formdata);
+    // console.log("data", formdata);
     // const res =
      await axios.post(
       "https://meesho-website-clone.herokuapp.com/login",

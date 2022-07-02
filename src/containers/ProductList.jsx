@@ -27,7 +27,7 @@ const ProductPage = () => {
   axios
   .get(`https://db-server-mesho.herokuapp.com/products?_sort=price&_order=${order}`)
   .then(({data})=>{
-      console.log("sorting:",data)
+      // console.log("sorting:",data)
       
       dispatch(setProducts(data));
       // dispatch(fetchProducts(data))
@@ -56,7 +56,7 @@ const handleSearch = async (e)=>{
   return await axios
   .get(`https://db-server-mesho.herokuapp.com/products?q=${value}`)
   .then(({data})=>{
-      console.log("sorting:",data)
+      // console.log("sorting:",data)
       
       dispatch(setProducts(data));
       // dispatch(fetchProducts(data))
@@ -74,7 +74,7 @@ const handleSort = async (e)=>{
   axios
   .get(`https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`)
   .then(({data})=>{
-      console.log("sorting:",data)
+      // console.log("sorting:",data)
       
       dispatch(setProducts(data));
       // dispatch(fetchProducts(data))
@@ -88,7 +88,7 @@ const handleFilter = async (value)=>{
   axios
   .get(`https://db-server-mesho.herokuapp.com/products?category=${value}`)
   .then(({data})=>{
-      console.log("sorting:",data)
+      // console.log("sorting:",data)
       
       dispatch(setProducts(data));
       // dispatch(fetchProducts(data))
