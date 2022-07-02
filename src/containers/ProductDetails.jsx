@@ -15,7 +15,7 @@ const ProductDetails = () => {
 
   const dispatch = useDispatch();
   const [cart, setCart] = useState({});
-console.log("selected data:..",cart)
+// console.log("selected data:..",cart)
 
   // const { productId } = useParams();
   const { id } = useParams();
