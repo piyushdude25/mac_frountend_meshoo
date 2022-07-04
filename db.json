@@ -495,22 +495,23 @@
   ],
   "cart": [
     {
-      "id": "15",
+      "id": "4",
       "quantity": 1,
-      "gender": "male",
+      "gender": "female",
       "product_type": "ethic",
-      "category": "shirt",
-      "sub_category": "cotton",
-      "name": "Printed Shirt",
-      "price": 500,
-      "discount": 25,
-      "ratings": 5,
+      "category": "kurti",
+      "sub_category": "silk",
+      "name": "Printed Saree With Unstitched Blouse",
+      "price": 1200,
+      "discount": 27,
+      "ratings": 4.1,
       "delivery": "free",
-      "reviews": 436,
-      "description": " Printed Shirt With Unstitched   Art Silk  : Separate  Piece",
-      "img1": "https://images.meesho.com/images/products/81723168/0gqfi_512.jpg",
-      "img2": "https://images.meesho.com/images/products/81723168/0gqfi_64.jpg",
-      "img3": "https://images.meesho.com/images/products/81723167/udu3p_64.jpg"
+      "reviews": 6756,
+      "description": " Name : Jaipur Fabric : Rayon Sleeve Length : Three-Quarter Sleeves Pattern : PrinteCombo of : SingleSizes :M (Bust Size : 38 in)",
+      "img1": "https://images.meesho.com/images/products/286347/1_512.jpg",
+      "img2": "https://images.meesho.com/images/products/286347/1_512.jpg",
+      "img3": "https://images.meesho.com/images/products/286357/1_64.jpg",
+      "__v": 0
     }
   ],
   "checkout": [

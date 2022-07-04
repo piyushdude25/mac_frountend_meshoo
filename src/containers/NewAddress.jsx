@@ -49,8 +49,9 @@ const NewAddress = () => {
         
         else {
           axios
-            // .post("https://db-server-mesho.herokuapp.com/checkout", {
-              .post("http://localhost:8000/checkout", {
+            .post("https://db-server-mesho.herokuapp.com/checkout", {
+           
+              // .post("http://localhost:8000/checkout", {
               // .post("https://ecommerce-masai.herokuapp.com/Checkout", {
               name: input.Name,
               Address: input.Address,

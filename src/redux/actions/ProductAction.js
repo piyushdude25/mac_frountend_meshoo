@@ -99,8 +99,8 @@ export const postProduct = (product) => async (dispatch)=> {
       return async (dispatch) => {
       
      const cartData =  await axios
-    // .post("https://db-server-mesho.herokuapp.com/cartproduct", data)
-    .post("http://localhost:8000/cart", data)
+    .post("https://db-server-mesho.herokuapp.com/cartproduct", data)
+    // .post("http://localhost:8000/cart", data)
     // .then()
     // alert("Item added to Cart")
     .catch((e)=> {console.log(e);
@@ -132,8 +132,8 @@ export const postProduct = (product) => async (dispatch)=> {
 
     return async (dispatch) => {
    const cartData =  await axios
-  // .get("https://db-server-mesho.herokuapp.com/cartproduct")
-  .get("http://localhost:8000/cart")
+  .get("https://db-server-mesho.herokuapp.com/cartproduct")
+  // .get("http://localhost:8000/cart")
       // console.log("cartDataaaaaaaaaa",cartData.data)
 
   if(cartData ){
@@ -159,8 +159,8 @@ export const deleteCartData = (id) => {
  
   
  const cartData =  await axios
-// .delete(`https://db-server-mesho.herokuapp.com/cartproduct/${id}`)
-.delete(`http://localhost:8000/cart/${id}`)
+.delete(`https://db-server-mesho.herokuapp.com/cartproduct/${id}`)
+// .delete(`http://localhost:8000/cart/${id}`)
     // console.log("cartDataaaaaaaaaa",cartData.data)
 
     // .catch((e)=> {console.log(e);

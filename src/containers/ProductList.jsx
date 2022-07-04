@@ -55,8 +55,8 @@ const sortOptions = ['gender'   , 'name' , 'price' , 'discount' ,'ratings']
 const handleSearch = async (e)=>{
   e.preventDefault()
   return await axios
-  // .get(`https://db-server-mesho.herokuapp.com/products?q=${value}`)
-  .get(` http://localhost:8000/products?q=${value}`)
+  .get(`https://db-server-mesho.herokuapp.com/products?q=${value}`)
+  // .get(` http://localhost:8000/products?q=${value}`)
   .then(({data})=>{
       // console.log("sorting:",data)
       
@@ -74,8 +74,8 @@ const handleSort = async (e)=>{
   setSortValue(value);
   return await 
   axios
-  // .get(`https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`)
-  .get(`http://localhost:8000/products?_sort=${value}&_order=asc`)
+  .get(`https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`)
+  // .get(`http://localhost:8000/products?_sort=${value}&_order=asc`)
   .then(({data})=>{
       // console.log("sorting:",data)
       
@@ -89,8 +89,8 @@ const handleSortD = async (e)=>{
   setSortValue(value);
   return await 
   axios
-  // .get(`https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`)
-  .get(`http://localhost:8000/products?_sort=${value}&_order=desc`)
+  .get(`https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`)
+  // .get(`http://localhost:8000/products?_sort=${value}&_order=desc`)
   .then(({data})=>{
       // console.log("sorting:",data)
       
@@ -104,8 +104,8 @@ const handleFilter = async (value)=>{
   
   return await 
   axios
-  // .get(`https://db-server-mesho.herokuapp.com/products?category=${value}`)
-  .get(`http://localhost:8000/products?category=${value}`)
+  .get(`https://db-server-mesho.herokuapp.com/products?category=${value}`)
+  // .get(`http://localhost:8000/products?category=${value}`)
   .then(({data})=>{
       // console.log("sorting:",data)
       
