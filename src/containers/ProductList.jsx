@@ -18,29 +18,30 @@ const ProductPage = () => {
   const products = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
   const [price, setPrice] = useState("price");
-  const [order, setOrder] = useState();
+  // const [order, setOrder] = useState();
 
 
 
-//////////for sorting...........
- const handleSorted =(order)=>{
-  axios
-  .get(`https://db-server-mesho.herokuapp.com/products?_sort=price&_order=${order}`)
-  .then(({data})=>{
-      // console.log("sorting:",data)
+//////////for sorting.....................................................................................
+//  const handleSorted =(order)=>{
+//   axios
+//   .get(`https://db-server-mesho.herokuapp.com/products?_sort=price&_order=${order}`)
+//   .then(({data})=>{
+//       // console.log("sorting:",data)
       
-      dispatch(setProducts(data));
-      // dispatch(fetchProducts(data))
-  })
-}
+//       dispatch(setProducts(data));
+//       // dispatch(fetchProducts(data))
+//   })
+// }
 
 
 useEffect(() => {
     
   dispatch (fetchProducts());
-  // fetchProductsxxxxxxx();
+  // fetchProducts();
   // handleSorted();
- }, [order]);
+
+ }, []);
 
 
 ///////////////////////////////////////////////NEW SORTING TRY---------------------------------------------
@@ -54,7 +55,8 @@ const sortOptions = ['gender'   , 'name' , 'price' , 'discount' ,'ratings']
 const handleSearch = async (e)=>{
   e.preventDefault()
   return await axios
-  .get(`https://db-server-mesho.herokuapp.com/products?q=${value}`)
+  // .get(`https://db-server-mesho.herokuapp.com/products?q=${value}`)
+  .get(` http://localhost:8000/products?q=${value}`)
   .then(({data})=>{
       // console.log("sorting:",data)
       
@@ -72,7 +74,23 @@ const handleSort = async (e)=>{
   setSortValue(value);
   return await 
   axios
-  .get(`https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`)
+  // .get(`https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`)
+  .get(`http://localhost:8000/products?_sort=${value}&_order=asc`)
+  .then(({data})=>{
+      // console.log("sorting:",data)
+      
+      dispatch(setProducts(data));
+      // dispatch(fetchProducts(data))
+  }).catch((err) => console.log(err))
+}
+
+const handleSortD = async (e)=>{
+  let value = e.target.value;
+  setSortValue(value);
+  return await 
+  axios
+  // .get(`https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`)
+  .get(`http://localhost:8000/products?_sort=${value}&_order=desc`)
   .then(({data})=>{
       // console.log("sorting:",data)
       
@@ -86,7 +104,8 @@ const handleFilter = async (value)=>{
   
   return await 
   axios
-  .get(`https://db-server-mesho.herokuapp.com/products?category=${value}`)
+  // .get(`https://db-server-mesho.herokuapp.com/products?category=${value}`)
+  .get(`http://localhost:8000/products?category=${value}`)
   .then(({data})=>{
       // console.log("sorting:",data)
       
@@ -115,9 +134,21 @@ const handleFilter = async (value)=>{
 
  {/* ///////////////////////////////////////////////NEW SORTING TRY--------------------------------------------- */}
  <div className="TRYSORTING">
+ <br /><br /><br />
+<button onClick={()=> handleReset()} >reset</button>
+<br /><br />
   <select name="" id="" onChange={handleSort} value={sortValue}>
 
-    <option value="">Sort by:</option>
+    <option value="">Sort by Asc:</option>
+    {sortOptions.map((item,index) => (
+      <option value={item} key = {index}>{item}</option>
+    
+    ))}
+  </select>
+  <br /><br /><br />
+  <select name="" id="" onChange={handleSortD} value={sortValue}>
+
+    <option value="">Sort by Desc:</option>
     {sortOptions.map((item,index) => (
       <option value={item} key = {index}>{item}</option>
     
@@ -129,7 +160,7 @@ const handleFilter = async (value)=>{
 <button onClick={()=> handleFilter("shirt")} > active</button>
 <button onClick={()=> handleFilter("saree")} > Inactive</button>
 </div> */}
-<button onClick={()=> handleReset()} >reset</button>
+
 
 
 {/* <form action="" onSubmit={handleSearch}>

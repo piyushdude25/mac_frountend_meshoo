@@ -68,7 +68,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 export default function SearchAppBar() {
-  const cart = useSelector((state) => state.cartReducer.count);
+  // const cart = useSelector((state) => state.cartReducer.count);
+  const cart = useSelector((state) => state.addToCart.count);
+  console.log("countCart:>>>>>",cart)
   const [state, setState] = useState([]);
   //const cartcount=useSelector(st=>st.cartReducer.count))
   
@@ -82,19 +84,9 @@ export default function SearchAppBar() {
   //       console.log(e, "eee");
   //     });
   // }, []);
-
-  const [Cart, setCart] = useState([]);
-  // console.log(Cart.length, "cartlength")
-  axios
-  .get("https://db-server-mesho.herokuapp.com/cartproduct")
-  
-  .then(({ data }) => {
-    setCart(data);
-    // console.log("countProduct:...:",data.length)
-  });
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
-// console.log("totalItems..........", state.length)
   /////////////////////////////////////////////////////////////
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -164,9 +156,9 @@ export default function SearchAppBar() {
               </Link>
             </div>
 
-                 {/* cartCount........... */}
+{/* cartCount........xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx... */}
             {/* <span className="cartIcon">{cart}</span> */}
-            <span className="cartIcon">{Cart.length}</span>
+            {/* <span className="cartIcon">{count.length}</span> */}
 
           </div>
         </Toolbar>

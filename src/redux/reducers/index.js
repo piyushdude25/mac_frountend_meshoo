@@ -4,6 +4,7 @@ import {  selectedProductReducer} from './selectedProductReducer'
 import {  cartReducer} from './cartReducer'
 import {  addToCart} from './addToCart'
 import { getcartdataReducer } from './getcartdataReducer'
+import { qtyReducer } from './qtyReducer'
 
  const reducers = combineReducers({
     allProducts: productReducer,
@@ -11,6 +12,7 @@ import { getcartdataReducer } from './getcartdataReducer'
     cartReducer:cartReducer,
     addToCart: addToCart,
     getcartdataReducer:getcartdataReducer,
+    qtyReducer:qtyReducer,
 
 })
 export default reducers

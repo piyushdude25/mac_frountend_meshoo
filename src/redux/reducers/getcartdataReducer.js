@@ -3,6 +3,7 @@ import {ActionTypes} from '../constants/action-types'
 const initialData = {
  
     cart:[],
+   
     error:false
 
 }

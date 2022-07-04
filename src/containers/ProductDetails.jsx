@@ -32,13 +32,22 @@ const ProductDetails = () => {
   // }, []);
 
 
+  // axios
+  // .get(`https://db-server-mesho.herokuapp.com/products/${id}`)
+  // .then(({ data }) => {
+  //   setCart(data);
+  // });
+  
+useEffect(()=> {
   axios
-  .get(`https://db-server-mesho.herokuapp.com/products/${id}`)
+  // .get(`https://db-server-mesho.herokuapp.com/products/${id}`)
+  .get(`http://localhost:8000/products/${id}`)
   .then(({ data }) => {
     setCart(data);
   });
 
-//by thunk...
+},[])
+
 useEffect(() => {
   if (id && id !== "") {dispatch(fetchProduct(id))} ;
   return () => {
@@ -66,10 +75,11 @@ useEffect(() => {
       img1: cart.img1,
     };
     axios
-    .post("https://db-server-mesho.herokuapp.com/cartproduct", payload)
+    // .post("https://db-server-mesho.herokuapp.com/cartproduct", payload)
+    .post("http://localhost:8000/cart", payload)
     .then(({data})=> {dispatch(addToCart()) })
     alert("Item added to Cart")
-    // .catch((e)=> {console.log(e)})
+    .catch((e)=> {console.log(e)})
   
   }
 
@@ -133,7 +143,7 @@ useEffect(() => {
     
 
            {/* <Button className="btns" variant="outlined" onClick={() => dispatch({type:ActionTypes.ADD_CART, payload:product})}>ADD TO CART</Button> */}
-           {/* <Button className="btns" variant="outlined" onClick={()=>(handlesubmit())}>ADD TO CART</Button> */}
+           {/* <Button className="btns" variant="outlined" onClick={()=>(handlesubmit())}>ADD TO CART 1</Button> */}
            <Button className="btns" variant="outlined" onClick={()=>(dispatch(addToCart(cart)))}>ADD TO CART</Button>
 
            <span> ‎ </span>

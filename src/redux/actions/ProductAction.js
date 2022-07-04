@@ -99,10 +99,12 @@ export const postProduct = (product) => async (dispatch)=> {
       return async (dispatch) => {
       
      const cartData =  await axios
-    .post("https://db-server-mesho.herokuapp.com/cartproduct", data)
+    // .post("https://db-server-mesho.herokuapp.com/cartproduct", data)
+    .post("http://localhost:8000/cart", data)
     // .then()
     // alert("Item added to Cart")
-    .catch((e)=> {console.log(e); alert("Item Allready added to Cart")})
+    .catch((e)=> {console.log(e);
+    alert("Item Allready added to Cart")})
 
     if(cartData ){
       dispatch({ 
@@ -127,14 +129,11 @@ export const postProduct = (product) => async (dispatch)=> {
 
   ///get card data...........
   export const getCartData = () => {
-    // return {
-    //     type : ActionTypes.ADD_TO_CART,
-    //     data: data,
-    // }
+
     return async (dispatch) => {
-    
    const cartData =  await axios
-  .get("https://db-server-mesho.herokuapp.com/cartproduct")
+  // .get("https://db-server-mesho.herokuapp.com/cartproduct")
+  .get("http://localhost:8000/cart")
       // console.log("cartDataaaaaaaaaa",cartData.data)
 
   if(cartData ){
@@ -154,25 +153,54 @@ export const postProduct = (product) => async (dispatch)=> {
 
 
 ///delete card data...........
-// export const deleteCartData = () => {
+export const deleteCartData = (id) => {
+  return async (dispatch) => {
+
  
-//   return async (dispatch) => {
   
-//  const cartData =  await axios
+ const cartData =  await axios
 // .delete(`https://db-server-mesho.herokuapp.com/cartproduct/${id}`)
-//     // console.log("cartDataaaaaaaaaa",cartData.data)
+.delete(`http://localhost:8000/cart/${id}`)
+    // console.log("cartDataaaaaaaaaa",cartData.data)
 
-// if(cartData ){
-//   dispatch({ 
-//     type: ActionTypes.DELETE_CART_DATA_SUCCESS,
-//      payload:  cartData.data 
-//     });
-// }else{
-//   dispatch({
-//      type: ActionTypes.DELETE_CART_DATA_FAILED,
-//       // payload: { cartItems }
-//      });
-// }
+    // .catch((e)=> {console.log(e);
+    //   alert("Item Allready added to Cart")})
+  
+      if(cartData ){
+        dispatch({ 
+          type: ActionTypes.DELETE_CART_DATA_SUCCESS,
+          
+          //  payload: { cartItems } 
+          });
+          alert("Item deleted to Cart")
+      }else{
+        dispatch({
+           type: ActionTypes.DELETE_CART_DATA_FAILED,
+            // payload: { cartItems }
+           });
+          
+      }
 
-//   };
-// }
+  };
+}
+
+///inc-dec quantity ..................................
+ // increment the item
+ export const increment = (id) => {
+  return ({
+    type: ActionTypes.INCREMENT,
+    payload: id,
+    
+  });
+};
+
+// decrement the item
+export const decrement = (id) => {
+  return ({
+    type: ActionTypes.DECREMENT,
+    payload: id,
+  });
+};
+
+
+

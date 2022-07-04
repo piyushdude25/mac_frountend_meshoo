@@ -2,8 +2,10 @@ import {ActionTypes} from '../constants/action-types'
 
 const initialState = {
     // cardData: []
+    count: 0,
     success:false,
-    error: false
+    error: false,
+   
 }
 
 export const addToCart = (state = initialState , action) => {
@@ -12,21 +14,58 @@ export const addToCart = (state = initialState , action) => {
             // console.warn("REducer",action)
             return {
                 ...state,
-                success:true
+                success:true,
+                count:state.count+1,
+                
             };
                 
-            case ActionTypes.ADD_TO_CART_FAILED:
+        case ActionTypes.ADD_TO_CART_FAILED:
                 // console.warn("REducer",action)
                 return {
                     ...state,
                     success:false,
                     error:true
                 }    
-            
-            default:
+// <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></>
+case ActionTypes.DELETE_CART_DATA_SUCCESS:
+    // console.warn("REducer",action)
+    return {
+        ...state,
+        success:true,
+        count:state.count-1,
+        
+    };
+// <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></>
+        default:
                 return state
     }
 }
+
+
+// // <<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></>
+// export const deleteToCart = (state = initialState , action) => {
+//     switch (action.type) {
+//         case ActionTypes.DELETE_CART_DATA_SUCCESS:
+//             // console.warn("REducer",action)
+//             return {
+//                 ...state,
+//                 success:true,
+//                 count:state.count-1,
+                
+//             };
+                
+//             case ActionTypes.DELETE_CART_DATA_FAILED:
+//                 // console.warn("REducer",action)
+//                 return {
+//                     ...state,
+//                     success:false,
+//                     error:true
+//                 }    
+            
+//             default:
+//                 return state
+//     }
+// }
 
 
 
