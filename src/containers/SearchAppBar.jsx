@@ -68,10 +68,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 export default function SearchAppBar() {
-  // const cart = useSelector((state) => state.cartReducer.count);
-  const cart = useSelector((state) => state.addToCart.count);
-  console.log("countCart:>>>>>",cart)
   const [state, setState] = useState([]);
+  // const cart = useSelector((state) => state.cartReducer.count);
+  // const cart = useSelector((state) => state.addToCart.count);
+
+  const [cartc, setCartc] = useState([]);
+// console.log(cart.length,"cartasdadasd")
+  
   //const cartcount=useSelector(st=>st.cartReducer.count))
   
   // useEffect(() => {
@@ -86,10 +89,22 @@ export default function SearchAppBar() {
   // }, []);
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+useEffect(() => {
+  handleCount();
+}, []);
+const handleCount = () => {
+  axios
+  .get("http://localhost:8000/cart")
+
+  .then(({ data }) => {
+    setCartc(data);
+  });
+};
 
   /////////////////////////////////////////////////////////////
   return (
     <Box sx={{ flexGrow: 1 }}>
+
       <AppBar position="static">
         <Toolbar className="Box">
           <IconButton
@@ -157,7 +172,7 @@ export default function SearchAppBar() {
             </div>
 
 {/* cartCount........xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx... */}
-            {/* <span className="cartIcon">{cart}</span> */}
+            <span className="cartIcon">{cartc.length}</span>
             {/* <span className="cartIcon">{count.length}</span> */}
 
           </div>

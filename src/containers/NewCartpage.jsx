@@ -151,7 +151,7 @@ const NewCartpage = () => {
           <Link to="/product/checkout" className="linkBtn">
             <Button className="SaveBtn" variant="outlined">
               {" "}
-              Buy Now{" "}
+              Buy Now
             </Button>
           </Link>
           {/* </div> */}

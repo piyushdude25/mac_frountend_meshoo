@@ -11,7 +11,7 @@ import axios from "axios";
 const NewAddress = () => {
 
   const [cart, setCart] = useState([]);
-// console.log(cart.data.price,"cart")
+// console.log(cart.length,"cart")
 
     const navigate = useNavigate();
     const totalPrice = useSelector((state)=>state.cartReducer.price)

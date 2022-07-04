@@ -133,9 +133,9 @@ const handleFilter = async (value)=>{
 
 
  {/* ///////////////////////////////////////////////NEW SORTING TRY--------------------------------------------- */}
- <div className="TRYSORTING">
+ <div className="SORTING">
  <br /><br /><br />
-<button onClick={()=> handleReset()} >reset</button>
+<button onClick={()=> handleReset()} >Reset</button>
 <br /><br />
   <select name="" id="" onChange={handleSort} value={sortValue}>
 

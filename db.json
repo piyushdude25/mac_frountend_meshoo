@@ -495,23 +495,22 @@
   ],
   "cart": [
     {
-      "id": "1",
+      "id": "15",
       "quantity": 1,
-      "gender": "female",
+      "gender": "male",
       "product_type": "ethic",
-      "category": "saree",
+      "category": "shirt",
       "sub_category": "cotton",
-      "name": "Printed Saree With Unstitched Blouse",
-      "price": 700,
-      "discount": 15,
-      "ratings": 4,
+      "name": "Printed Shirt",
+      "price": 500,
+      "discount": 25,
+      "ratings": 5,
       "delivery": "free",
-      "reviews": 4566,
-      "description": " Printed Saree With Unstitched Blou  Art Silk Blouse : Separate Blouse Piece",
-      "img1": "https://images.meesho.com/images/products/33167775/nbfim_512.jpg",
-      "img2": "https://images.meesho.com/images/products/33167776/pjrtk_64.jpg",
-      "img3": "https://images.meesho.com/images/products/33167774/pajfj_64.jpg",
-      "__v": 0
+      "reviews": 436,
+      "description": " Printed Shirt With Unstitched   Art Silk  : Separate  Piece",
+      "img1": "https://images.meesho.com/images/products/81723168/0gqfi_512.jpg",
+      "img2": "https://images.meesho.com/images/products/81723168/0gqfi_64.jpg",
+      "img3": "https://images.meesho.com/images/products/81723167/udu3p_64.jpg"
     }
   ],
   "checkout": [
