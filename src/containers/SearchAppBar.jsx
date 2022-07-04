@@ -94,7 +94,7 @@ useEffect(() => {
 }, []);
 const handleCount = () => {
   axios
-  .get("http://localhost:8000/cart")
+  .get("https://db-server-mesho.herokuapp.com/cartproduct")
 
   .then(({ data }) => {
     setCartc(data);
