@@ -92,10 +92,7 @@ export const postProduct = (product) => async (dispatch)=> {
 
      ////////////add_to_card/////
     export const addToCart = (data) => {
-      // return {
-      //     type : ActionTypes.ADD_TO_CART,
-      //     data: data,
-      // }
+    
       return async (dispatch) => {
       
      const cartData =  await axios
@@ -107,6 +104,7 @@ export const postProduct = (product) => async (dispatch)=> {
     alert("Item Allready added to Cart")})
 
     if(cartData ){
+      dispatch(getCartData());
       dispatch({ 
         type: ActionTypes.ADD_TO_CART_SUCCESS,
         
@@ -133,8 +131,7 @@ export const postProduct = (product) => async (dispatch)=> {
     return async (dispatch) => {
    const cartData =  await axios
   .get("https://db-server-mesho.herokuapp.com/cartproduct")
-  // .get("http://localhost:8000/cart")
-      // console.log("cartDataaaaaaaaaa",cartData.data)
+      console.log("cartDataaaaaaaaaa",cartData.data)
 
   if(cartData ){
     dispatch({ 
@@ -158,27 +155,13 @@ export const deleteCartData = (id) => {
 
  
   
- const cartData =  await axios
+ const dcartData =  await axios
 .delete(`https://db-server-mesho.herokuapp.com/cartproduct/${id}`)
-// .delete(`http://localhost:8000/cart/${id}`)
-    // console.log("cartDataaaaaaaaaa",cartData.data)
+    console.log("cartData...",dcartData)
 
-    // .catch((e)=> {console.log(e);
-    //   alert("Item Allready added to Cart")})
-  
-      if(cartData ){
-        dispatch({ 
-          type: ActionTypes.DELETE_CART_DATA_SUCCESS,
-          
-          //  payload: { cartItems } 
-          });
-          alert("Item deleted to Cart")
-      }else{
-        dispatch({
-           type: ActionTypes.DELETE_CART_DATA_FAILED,
-            // payload: { cartItems }
-           });
-          
+      if(dcartData ){
+        alert("Item deleted to Cart")
+          dispatch(getCartData())
       }
 
   };

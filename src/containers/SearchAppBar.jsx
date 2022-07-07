@@ -24,6 +24,7 @@ import UserLogin from "./UserLogin";
 
 const Search = styled("div")(({ theme }) => ({
 
+
   position: "relative",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.1),
@@ -68,6 +69,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 export default function SearchAppBar() {
+  const cartCount =useSelector((state)=> state.getcartdataReducer.cart)
+  // console.log("coun....",cartCount.length)
   const [state, setState] = useState([]);
   // const cart = useSelector((state) => state.cartReducer.count);
   // const cart = useSelector((state) => state.addToCart.count);
@@ -89,17 +92,18 @@ export default function SearchAppBar() {
   // }, []);
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-useEffect(() => {
-  handleCount();
-}, []);
-const handleCount = () => {
-  axios
-  .get("https://db-server-mesho.herokuapp.com/cartproduct")
+// useEffect(() => {
+//   handleCount();
+// }, []);
 
-  .then(({ data }) => {
-    setCartc(data);
-  });
-};
+// const handleCount = () => {
+//   axios
+//   .get("https://db-server-mesho.herokuapp.com/cartproduct")
+
+//   .then(({ data }) => {
+//     setCartc(data);
+//   });
+// };
 
   /////////////////////////////////////////////////////////////
   return (
@@ -172,7 +176,7 @@ const handleCount = () => {
             </div>
 
 {/* cartCount........xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx... */}
-            <span className="cartIcon">{cartc.length}</span>
+            <span className="cartIcon">{cartCount.length}</span>
             {/* <span className="cartIcon">{count.length}</span> */}
 
           </div>

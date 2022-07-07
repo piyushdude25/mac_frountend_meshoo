@@ -1,7 +1,5 @@
-import React, { useEffect, useState, useSyncExternalStore } from "react";
+import React, { useEffect, useState } from "react";
 import "./cartpage.css";
-import axios from "axios";
-import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { ActionTypes } from "../redux/constants/action-types";
@@ -10,12 +8,9 @@ import { getCartData, deleteCartData, increment, decrement } from "../redux/acti
 const NewCartpage = () => {
   const dispatch = useDispatch();
 
-  
-
-
-  const [deleteCart, setDeleteCart] = useState();
   const dataCart = useSelector((state) => state.getcartdataReducer.cart);
-  // console.log("DATACart.....",dataCart)
+  // const [deleteCart, setDeleteCart] = useState();
+  console.log("DATACart.....",dataCart)
 
 //////////////////////inc  ///////////////////////////////////////////////////
 //   const [quantity, setQuantity] = useState(0)
@@ -53,22 +48,21 @@ const NewCartpage = () => {
 
 
   useEffect(() => {
-    // handleCartDetail();
     // getCartData()
-    dispatch(getCartData());
-  // Cartitems(dataCart)
-
-  }, [deleteCart]);
+     dispatch(getCartData());
+  
+    
+  }, []);
 
   const deleteCartItem = (id) => {
     dispatch(deleteCartData(id));
-    setDeleteCart(id);
+    // setDeleteCart(id);
+    // dispatch(getCartData());
   };
 
   var total = 0;
   var totalItems = 0;
 
-//  var quantity = 0
 
   return (
     <div className="cart-container">
@@ -114,7 +108,7 @@ const NewCartpage = () => {
 {/* /////////////////////////////////////////////////// */}
                 </div>
 
-                <span className="cross" onClick={() => deleteCartItem(cart.id)}>
+                <span className="cross" onClick={ () => deleteCartItem(cart.id)}>
                   x
                 </span>
 
@@ -147,14 +141,11 @@ const NewCartpage = () => {
             </div>
           </div>
           <br />
-          {/* <div  > */}
+      
           <Link to="/product/checkout" className="linkBtn">
-            <Button className="SaveBtn" variant="outlined">
-              {" "}
-              Buy Now
-            </Button>
+            <button className="SaveBtn" >   Buy Now</button>
           </Link>
-          {/* </div> */}
+    
         </div>
 
         {/* -------------------------------- */}
