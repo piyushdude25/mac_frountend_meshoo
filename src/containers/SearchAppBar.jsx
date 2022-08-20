@@ -170,14 +170,13 @@ export default function SearchAppBar() {
             <div className="hLBox">
             <Link to="/product/cart">
               <ShoppingCartRoundedIcon />
-              {/* <span className="cartIcon">{cart}</span>  */}
+              {/* <span className="cartIcon">{cartCount.length}</span>  */}
               <p className="hoverWhite">Cart</p>
               </Link>
             </div>
 
-{/* cartCount........xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx... */}
+{/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx      cartCount       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx... */}
             <span className="cartIcon">{cartCount.length}</span>
-            {/* <span className="cartIcon">{count.length}</span> */}
 
           </div>
         </Toolbar>

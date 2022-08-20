@@ -51,14 +51,13 @@ const [value, setValue] = useState("");
 const [sortValue, setSortValue] = useState("");
 const sortOptions = ['gender'   , 'name' , 'price' , 'discount' ,'ratings']
 
-//search---
+//search---.................................................Q.....
 const handleSearch = async (e)=>{
   e.preventDefault()
   return await axios
   .get(`https://db-server-mesho.herokuapp.com/products?q=${value}`)
-  // .get(` http://localhost:8000/products?q=${value}`)
   .then(({data})=>{
-      // console.log("sorting:",data)
+      console.log("Searchsorting...:",data)
       
       dispatch(setProducts(data));
       // dispatch(fetchProducts(data))
@@ -116,7 +115,21 @@ const handleFilter = async (value)=>{
 ///--------------------------------------------------------------------------------------------------------
  
 
-
+const someCategory = async (value)=>{
+  console.log("value...:",value)
+  return await 
+  axios
+  .get(`https://db-server-mesho.herokuapp.com/products?category=${value}`)
+  .then(
+    
+    ({data})=>{
+      console.log("sorting:",data)
+      
+      dispatch(setProducts(data));
+      // dispatch(fetchProducts(data))
+  }).catch((err) => console.log(err))
+}
+///--------------------------------------------------------------------------------------------------------
   return (
     <>
 
@@ -156,17 +169,18 @@ const handleFilter = async (value)=>{
   </select>
 </div>
 
-{/* <div>
-<button onClick={()=> handleFilter("shirt")} > active</button>
-<button onClick={()=> handleFilter("saree")} > Inactive</button>
-</div> */}
+<div>
+<button onClick={()=> someCategory("saree" && "shirt")}> someCategory </button>
+<button onClick={()=> handleFilter("shirt")}> shirt </button>
+<button onClick={()=> handleFilter("saree")}> saree </button>
+</div>
 
 
 
-{/* <form action="" onSubmit={handleSearch}>
+<form action="" onSubmit={handleSearch}>
     <input type="text" placeholder="search name" value={value} onChange={(e) => setValue(e.target.value)} />
     <button type="submit" >search</button>
-</form> */}
+</form>
 {/* ///////////////////////////////////////////////NEW SORTING TRY--------------------------------------------- */}
 
 

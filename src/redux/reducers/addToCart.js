@@ -1,7 +1,7 @@
 import {ActionTypes} from '../constants/action-types'
 
 const initialState = {
-    // cardData: []
+    // cardData: [],
     // count: 0,
     success:false,
     error: false,
@@ -16,7 +16,7 @@ export const addToCart = (state = initialState , action) => {
                 ...state,
                 success:true,
                 // count:state.count+1,
-                
+                // cardData:action.payload
             };
                 
         case ActionTypes.ADD_TO_CART_FAILED:

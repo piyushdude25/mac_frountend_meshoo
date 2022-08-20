@@ -97,9 +97,6 @@ export const postProduct = (product) => async (dispatch)=> {
       
      const cartData =  await axios
     .post("https://db-server-mesho.herokuapp.com/cartproduct", data)
-    // .post("http://localhost:8000/cart", data)
-    // .then()
-    // alert("Item added to Cart")
     .catch((e)=> {console.log(e);
     alert("Item Allready added to Cart")})
 
@@ -107,7 +104,7 @@ export const postProduct = (product) => async (dispatch)=> {
       dispatch(getCartData());
       dispatch({ 
         type: ActionTypes.ADD_TO_CART_SUCCESS,
-        
+        // payload: cartData.data
         //  payload: { cartItems } 
         });
         alert("Item added to Cart")
