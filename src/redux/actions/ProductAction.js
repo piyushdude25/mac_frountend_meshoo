@@ -146,11 +146,9 @@ export const postProduct = (product) => async (dispatch)=> {
 
 
 
-///delete card data...........
+///delete card data..................................
 export const deleteCartData = (id) => {
   return async (dispatch) => {
-
- 
   
  const dcartData =  await axios
 .delete(`https://db-server-mesho.herokuapp.com/cartproduct/${id}`)
