@@ -23,8 +23,6 @@ import UserLogin from "./UserLogin";
 // import Cartpage from "./Cartpage";
 
 const Search = styled("div")(({ theme }) => ({
-
-
   position: "relative",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.1),
@@ -66,20 +64,18 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-
-
 export default function SearchAppBar() {
-  const cartCount =useSelector((state)=> state.getcartdataReducer.cart)
-  // console.log("coun....",cartCount.length)
+  const cartCount = useSelector((state) => state.getcartdataReducer.cart);
+  console.log("coun....", cartCount.length);
   const [state, setState] = useState([]);
   // const cart = useSelector((state) => state.cartReducer.count);
   // const cart = useSelector((state) => state.addToCart.count);
 
   const [cartc, setCartc] = useState([]);
-// console.log(cart.length,"cartasdadasd")
-  
+  // console.log(cart.length,"cartasdadasd")
+
   //const cartcount=useSelector(st=>st.cartReducer.count))
-  
+
   // useEffect(() => {
   //   axios
   //     .get("https://meesho123.herokuapp.com/cart")
@@ -90,25 +86,24 @@ export default function SearchAppBar() {
   //       console.log(e, "eee");
   //     });
   // }, []);
-// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-// useEffect(() => {
-//   handleCount();
-// }, []);
+  // useEffect(() => {
+  //   handleCount();
+  // }, []);
 
-// const handleCount = () => {
-//   axios
-//   .get("https://db-server-mesho.herokuapp.com/cartproduct")
+  // const handleCount = () => {
+  //   axios
+  //   .get("https://db-server-mesho.herokuapp.com/cartproduct")
 
-//   .then(({ data }) => {
-//     setCartc(data);
-//   });
-// };
+  //   .then(({ data }) => {
+  //     setCartc(data);
+  //   });
+  // };
 
   /////////////////////////////////////////////////////////////
   return (
     <Box sx={{ flexGrow: 1 }}>
-
       <AppBar position="static">
         <Toolbar className="Box">
           <IconButton
@@ -145,12 +140,10 @@ export default function SearchAppBar() {
 
           {/* <<<<<<<<<<<<<<<<<<<<< Header Right Boxes   >>>>>>>>>>>>>>>>>>>>>>>>>>*/}
           <div className="headerLeftBoxes">
-            
-          <div className="hLBox UserLoginBtn">
+            <div className="hLBox UserLoginBtn">
               <UserLogin />
-            
             </div>
-            
+
             {/* <div className="hLBox">
               <InstallMobileRoundedIcon />
               <p>Download App</p>
@@ -160,32 +153,27 @@ export default function SearchAppBar() {
               <p>Admin</p>
             </div> */}
             <div className="hLBox">
-            <Link to="/signup">
-              <AccountCircleRoundedIcon className="black" />
-             <p className="hoverWhite">Profile</p>
-             </Link>
-
-            </div>
-
-            <div className="hLBox">
-            <Link to="/product/cart">
-              <ShoppingCartRoundedIcon />
-              {/* <span className="cartIcon">{cartCount.length}</span>  */}
-              <p className="hoverWhite">Cart</p>
+              <Link to="/signup">
+                <AccountCircleRoundedIcon className="black" />
+                <p className="hoverWhite">Profile</p>
               </Link>
             </div>
 
-{/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx      cartCount       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx... */}
-            <span className="cartIcon">{cartCount.length}</span>
+            <div className="hLBox">
+              <Link to="/product/cart">
+                <ShoppingCartRoundedIcon />
+                {/* <span className="cartIcon">{cartCount.length}</span>  */}
+                <p className="hoverWhite">Cart</p>
+              </Link>
+            </div>
 
+            {/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx      cartCount       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx... */}
+            <span className="cartIcon">{cartCount.length}</span>
           </div>
         </Toolbar>
       </AppBar>
 
       <hr />
-
-      
-      
     </Box>
   );
 }

@@ -1,0 +1,28 @@
+.demo {
+  width: 200px;
+  height: 200px;
+  margin: 20%;
+  background-color: rgb(229, 229, 229);
+  /* transform: rotate(-45deg); */
+}
+
+.demo {
+  display: grid;
+  grid-template-rows: 50px 60px 30px 40px;
+  grid-template-columns: 100px 60px 30px 40px;
+}
+.a {
+  background-color: aqua;
+}
+.b {
+  background-color: rgb(255, 170, 0);
+}
+.c {
+  background-color: rgb(94, 255, 0);
+}
+.d {
+  background-color: rgb(85, 0, 255);
+}
+.a {
+  background-color: aqua;
+}

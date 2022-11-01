@@ -22,6 +22,7 @@ import NewCartpage from "./containers/NewCartpage";
 import SignupFirebase from "./containers/SignupFirebase";
 import LoginFirebase from "./containers/LoginFirebase";
 import { AuthProvider } from "./contextApi/AuthContext";
+import Demo from "./containers/Demo";
 
 function App() {
   return (
@@ -56,6 +57,8 @@ function App() {
 
           <Route exact path="/signup" element={<SignupFirebase />} />
           <Route exact path="/login" element={<LoginFirebase />} />
+
+          <Route exact path="/demo" element={<Demo />} />
 
           <Route>404 not found!!!</Route>
         </Routes>

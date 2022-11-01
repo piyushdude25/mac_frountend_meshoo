@@ -3,28 +3,33 @@ import "./cartpage.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { ActionTypes } from "../redux/constants/action-types";
-import { getCartData, deleteCartData, increment, decrement } from "../redux/actions/ProductAction";
+import {
+  getCartData,
+  deleteCartData,
+  increment,
+  decrement,
+} from "../redux/actions/ProductAction";
 
 const NewCartpage = () => {
   const dispatch = useDispatch();
 
   const dataCart = useSelector((state) => state.getcartdataReducer.cart);
   // const [deleteCart, setDeleteCart] = useState();
-  console.log("DATACart.....",dataCart)
+  console.log("DATACart.....", dataCart);
 
-//////////////////////inc  ///////////////////////////////////////////////////
-//   const [quantity, setQuantity] = useState(0)
-// const decQty = (id) => {
-//   setQuantity(quantity-1)
-// }
+  //////////////////////inc  ///////////////////////////////////////////////////
+  //   const [quantity, setQuantity] = useState(0)
+  // const decQty = (id) => {
+  //   setQuantity(quantity-1)
+  // }
 
-// const incQty = (id) => {
-//   var incData = dataCart.filter((e) => {e.id=id})
-//   if(incData){
-//     setQuantity(quantity+1)
-//   }
-// }
-// =========================================================================================
+  // const incQty = (id) => {
+  //   var incData = dataCart.filter((e) => {e.id=id})
+  //   if(incData){
+  //     setQuantity(quantity+1)
+  //   }
+  // }
+  // =========================================================================================
   // // increment the item
   // const increment = (id) => {
   //   return dispatch({
@@ -41,17 +46,11 @@ const NewCartpage = () => {
   //   });
   // };
 
-
-//////////////////////////////////////////////////////=
-
-
-
+  //////////////////////////////////////////////////////=
 
   useEffect(() => {
     // getCartData()
-     dispatch(getCartData());
-  
-    
+    dispatch(getCartData());
   }, []);
 
   const deleteCartItem = (id) => {
@@ -63,17 +62,14 @@ const NewCartpage = () => {
   var total = 0;
   var totalItems = 0;
 
-
   return (
     <div className="cart-container">
       <div className="cart-body">
-
         <div className="cart-left">
           {dataCart.map((cart) => {
             total = total + +cart.price;
             totalItems = totalItems + 1;
             return (
-            
               <div className="cart-items-container" key={cart.id}>
                 <div className="cart-img-div">
                   <img className="img1" src={cart.img1} alt="" />
@@ -87,36 +83,34 @@ const NewCartpage = () => {
                   <br />
                   <span>{cart.delivery}</span>
 
-{/* ////////////////////////////////////////////// */}
+                  {/* ////////////////////////////////////////////// */}
                   {/* <div>
                     <button onClick={()=> {decQty(cart.id)}}>-</button>
                     <span>{quantity}</span>
                     <button onClick={()=> {incQty(cart.id)}} >+</button>
                   </div> */}
-{/* ================================================================================================*/}
-        <div className="add-minus-quantity">
-          {/* <i className="fas fa-minus minus" onClick={() => decrement(cart.id)}></i>
+                  {/* ================================================================================================*/}
+                  <div className="add-minus-quantity">
+                    {/* <i className="fas fa-minus minus" onClick={() => decrement(cart.id)}></i>
           <input type="text" placeholder={quantity} disabled />
           <i className="fas fa-plus add" onClick={() => increment(cart.id)}></i> */}
 
-          {/* <button onClick={()=>(dispatch(decrement(cart.id)))} >-</button>
-            <span>{cart.quantity}</span>
-          <button onClick={()=>(dispatch(increment(cart.id)))} >+</button> */}
-        </div>
+                    <button onClick={() => dispatch(decrement(cart.id))}>
+                      -
+                    </button>
+                    <span>{cart.quantity}</span>
+                    <button onClick={() => dispatch(increment(cart.id))}>
+                      +
+                    </button>
+                  </div>
 
-
-{/* /////////////////////////////////////////////////// */}
+                  {/* /////////////////////////////////////////////////// */}
                 </div>
 
-                <span className="cross" onClick={ () => deleteCartItem(cart.id)}>
+                <span className="cross" onClick={() => deleteCartItem(cart.id)}>
                   x
                 </span>
-
-                
-
               </div>
-
-
             );
           })}
         </div>
@@ -141,11 +135,10 @@ const NewCartpage = () => {
             </div>
           </div>
           <br />
-      
+
           <Link to="/product/checkout" className="linkBtn">
-            <button className="SaveBtn" >   Buy Now</button>
+            <button className="SaveBtn"> Buy Now</button>
           </Link>
-    
         </div>
 
         {/* -------------------------------- */}
