@@ -1,219 +1,209 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { setProducts,fetchProducts     , sortfetchProducts} from "../redux/actions/ProductAction";
+import {
+  setProducts,
+  fetchProducts,
+  sortfetchProducts,
+} from "../redux/actions/ProductAction";
 import ProductComponent from "./ProductComponent";
 import "./ProductList.css";
-import "./SearchAppBar.css"
+import "./SearchAppBar.css";
 import { useState } from "react";
 
-import Backdrop from '@mui/material/Backdrop';
-import CircularProgress from '@mui/material/CircularProgress';
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 import DropSortCategory from "./DropSortCategory";
 import { Link } from "react-router-dom";
-import loadingGif from "./images/loadingGif.gif"
+import loadingGif from "./images/loadingGif.gif";
 import { margin } from "@mui/system";
 
 const ProductPage = () => {
   const products = useSelector((state) => state.allProducts.products);
+  // console.log("PRODUCTS", products.length);
   const dispatch = useDispatch();
   const [price, setPrice] = useState("price");
   // const [order, setOrder] = useState();
 
+  //////////for sorting.....................................................................................
+  //  const handleSorted =(order)=>{
+  //   axios
+  //   .get(`https://db-server-mesho.herokuapp.com/products?_sort=price&_order=${order}`)
+  //   .then(({data})=>{
+  //       // console.log("sorting:",data)
 
+  //       dispatch(setProducts(data));
+  //       // dispatch(fetchProducts(data))
+  //   })
+  // }
 
-//////////for sorting.....................................................................................
-//  const handleSorted =(order)=>{
-//   axios
-//   .get(`https://db-server-mesho.herokuapp.com/products?_sort=price&_order=${order}`)
-//   .then(({data})=>{
-//       // console.log("sorting:",data)
-      
-//       dispatch(setProducts(data));
-//       // dispatch(fetchProducts(data))
-//   })
-// }
+  useEffect(() => {
+    dispatch(fetchProducts());
+    // fetchProducts();
+    // handleSorted();
+  }, []);
 
+  ///////////////////////////////////////////////NEW SORTING TRY---------------------------------------------
 
-useEffect(() => {
-    
-  dispatch (fetchProducts());
-  // fetchProducts();
-  // handleSorted();
+  const [data, setData] = useState([]);
+  const [value, setValue] = useState("");
+  const [sortValue, setSortValue] = useState("");
+  const sortOptions = ["gender", "name", "price", "discount", "ratings"];
 
- }, []);
+  //search---.................................................Q.....
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    return await axios
+      .get(`https://db-server-mesho.herokuapp.com/products?q=${value}`)
+      .then(({ data }) => {
+        console.log("Searchsorting...:", data);
 
+        dispatch(setProducts(data));
+        // dispatch(fetchProducts(data))
+      })
+      .catch((err) => console.log(err));
+  };
 
-///////////////////////////////////////////////NEW SORTING TRY---------------------------------------------
+  // reset ---
+  const handleReset = () => {
+    dispatch(fetchProducts());
+  };
+  const handleSort = async (e) => {
+    let value = e.target.value;
+    setSortValue(value);
+    return await axios
+      .get(
+        `https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`
+      )
+      // .get(`http://localhost:8000/products?_sort=${value}&_order=asc`)
+      .then(({ data }) => {
+        // console.log("sorting:",data)
 
-const [data, setData] = useState([]);
-const [value, setValue] = useState("");
-const [sortValue, setSortValue] = useState("");
-const sortOptions = ['gender'   , 'name' , 'price' , 'discount' ,'ratings']
+        dispatch(setProducts(data));
+        // dispatch(fetchProducts(data))
+      })
+      .catch((err) => console.log(err));
+  };
 
-//search---.................................................Q.....
-const handleSearch = async (e)=>{
-  e.preventDefault()
-  return await axios
-  .get(`https://db-server-mesho.herokuapp.com/products?q=${value}`)
-  .then(({data})=>{
-      console.log("Searchsorting...:",data)
-      
-      dispatch(setProducts(data));
-      // dispatch(fetchProducts(data))
-  }).catch((err) => console.log(err))
-}
+  const handleSortD = async (e) => {
+    let value = e.target.value;
+    setSortValue(value);
+    return await axios
+      .get(
+        `https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`
+      )
+      // .get(`http://localhost:8000/products?_sort=${value}&_order=desc`)
+      .then(({ data }) => {
+        // console.log("sorting:",data)
 
-// reset ---
-const handleReset = () => {
-  dispatch (fetchProducts());
-}
-const handleSort = async (e)=>{
-  let value = e.target.value;
-  setSortValue(value);
-  return await 
-  axios
-  .get(`https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`)
-  // .get(`http://localhost:8000/products?_sort=${value}&_order=asc`)
-  .then(({data})=>{
-      // console.log("sorting:",data)
-      
-      dispatch(setProducts(data));
-      // dispatch(fetchProducts(data))
-  }).catch((err) => console.log(err))
-}
+        dispatch(setProducts(data));
+        // dispatch(fetchProducts(data))
+      })
+      .catch((err) => console.log(err));
+  };
 
-const handleSortD = async (e)=>{
-  let value = e.target.value;
-  setSortValue(value);
-  return await 
-  axios
-  .get(`https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`)
-  // .get(`http://localhost:8000/products?_sort=${value}&_order=desc`)
-  .then(({data})=>{
-      // console.log("sorting:",data)
-      
-      dispatch(setProducts(data));
-      // dispatch(fetchProducts(data))
-  }).catch((err) => console.log(err))
-}
+  //filter----
+  const handleFilter = async (value) => {
+    return await axios
+      .get(`https://db-server-mesho.herokuapp.com/products?category=${value}`)
+      // .get(`http://localhost:8000/products?category=${value}`)
+      .then(({ data }) => {
+        // console.log("sorting:",data)
 
-//filter----
-const handleFilter = async (value)=>{
-  
-  return await 
-  axios
-  .get(`https://db-server-mesho.herokuapp.com/products?category=${value}`)
-  // .get(`http://localhost:8000/products?category=${value}`)
-  .then(({data})=>{
-      // console.log("sorting:",data)
-      
-      dispatch(setProducts(data));
-      // dispatch(fetchProducts(data))
-  }).catch((err) => console.log(err))
-}
-///--------------------------------------------------------------------------------------------------------
- 
+        dispatch(setProducts(data));
+        // dispatch(fetchProducts(data))
+      })
+      .catch((err) => console.log(err));
+  };
+  ///--------------------------------------------------------------------------------------------------------
 
-const someCategory = async (value)=>{
-  console.log("value...:",value)
-  return await 
-  axios
-  .get(`https://db-server-mesho.herokuapp.com/products?category=${value}`)
-  .then(
-    
-    ({data})=>{
-      console.log("sorting:",data)
-      
-      dispatch(setProducts(data));
-      // dispatch(fetchProducts(data))
-  }).catch((err) => console.log(err))
-}
-///--------------------------------------------------------------------------------------------------------
+  const someCategory = async (value) => {
+    console.log("value...:", value);
+    return await axios
+      .get(`https://db-server-mesho.herokuapp.com/products?category=${value}`)
+      .then(({ data }) => {
+        console.log("sorting:", data);
+
+        dispatch(setProducts(data));
+        // dispatch(fetchProducts(data))
+      })
+      .catch((err) => console.log(err));
+  };
+  ///--------------------------------------------------------------------------------------------------------
   return (
     <>
-
-<div  className="try">
-    <DropSortCategory/>
-</div>
-   
-
+      <div className="try">
+        <DropSortCategory />
+      </div>
 
       <div className="sortBtns">
         {" "}
         {/* <button variant="text" onClick={()=>handleSorted("asc")}>low to high</button>
         <button variant="text" onClick={()=>handleSorted("desc")}>high to low</button> */}
-
-
- {/* ///////////////////////////////////////////////NEW SORTING TRY--------------------------------------------- */}
- <div className="SORTING">
- <br /><br /><br />
-<button onClick={()=> handleReset()} >Reset</button>
-<br /><br />
-  <select name="" id="" onChange={handleSort} value={sortValue}>
-
-    <option value="">Sort by Asc:</option>
-    {sortOptions.map((item,index) => (
-      <option value={item} key = {index}>{item}</option>
-    
-    ))}
-  </select>
-  <br /><br /><br />
-  <select name="" id="" onChange={handleSortD} value={sortValue}>
-
-    <option value="">Sort by Desc:</option>
-    {sortOptions.map((item,index) => (
-      <option value={item} key = {index}>{item}</option>
-    
-    ))}
-  </select>
-</div>
-
-<div>
-<button onClick={()=> someCategory("saree" && "shirt")}> someCategory </button>
-<button onClick={()=> handleFilter("shirt")}> shirt </button>
-<button onClick={()=> handleFilter("saree")}> saree </button>
-</div>
-
-
-
-<form action="" onSubmit={handleSearch}>
-    <input type="text" placeholder="search name" value={value} onChange={(e) => setValue(e.target.value)} />
-    <button type="submit" >search</button>
-</form>
-{/* ///////////////////////////////////////////////NEW SORTING TRY--------------------------------------------- */}
-
-
+        {/* ///////////////////////////////////////////////NEW SORTING TRY--------------------------------------------- */}
+        <div className="SORTING">
+          <br />
+          <br />
+          <br />
+          <button onClick={() => handleReset()}>Reset</button>
+          <br />
+          <br />
+          <select name="" id="" onChange={handleSort} value={sortValue}>
+            <option value="">Sort by Asc:</option>
+            {sortOptions.map((item, index) => (
+              <option value={item} key={index}>
+                {item}
+              </option>
+            ))}
+          </select>
+          <br />
+          <br />
+          <br />
+          <select name="" id="" onChange={handleSortD} value={sortValue}>
+            <option value="">Sort by Desc:</option>
+            {sortOptions.map((item, index) => (
+              <option value={item} key={index}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <button onClick={() => someCategory("saree" && "shirt")}>
+            {" "}
+            someCategory{" "}
+          </button>
+          <button onClick={() => handleFilter("shirt")}> shirt </button>
+          <button onClick={() => handleFilter("saree")}> saree </button>
+        </div>
+        <form action="" onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="search name"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
+          <button type="submit">search</button>
+        </form>
+        {/* ///////////////////////////////////////////////NEW SORTING TRY--------------------------------------------- */}
       </div>
 
-     
-
-
-      {products.length === 0 ? ( 
+      {products.length === 0 ? (
         <div>
           <h3 className="loading">Loading...</h3>
-      <img
-      src="http://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Social_dino-with-hat.gif"
-      style={{ width: "100%", height: "100%" }}
-      alt=""
-    />
+          <img
+            src="http://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Social_dino-with-hat.gif"
+            style={{ width: "100%", height: "100%" }}
+            alt=""
+          />
         </div>
-        ) 
-        : ( 
-          
-        
-          
+      ) : (
         <div className="ProductBox">
-       {products.map((e) => {
-       return <ProductComponent product={e} key={e.id} />;
-       
-       })}
+          {products.map((e) => {
+            return <ProductComponent product={e} key={e.id} />;
+          })}
         </div>
-        ) 
-        
-        }
-
-    
+      )}
     </>
   );
 };
