@@ -143,11 +143,18 @@ const ProductPage = () => {
         {/* ///////////////////////////////////////////////NEW SORTING TRY--------------------------------------------- */}
         <div className="SORTING">
           <br />
-          <br />
-          <br />
+
           <button onClick={() => handleReset()}>Reset</button>
           <br />
-          <br />
+
+          <div>
+            {/* <button onClick={() => someCategory("saree" && "shirt")}>
+            someCategory
+          </button> */}
+            <button onClick={() => handleFilter("shirt")}> shirt </button>
+            <br />
+            <button onClick={() => handleFilter("saree")}> saree </button>
+          </div>
           <select name="" id="" onChange={handleSort} value={sortValue}>
             <option value="">Sort by Asc:</option>
             {sortOptions.map((item, index) => (
@@ -157,24 +164,15 @@ const ProductPage = () => {
             ))}
           </select>
           <br />
-          <br />
-          <br />
+
           <select name="" id="" onChange={handleSortD} value={sortValue}>
-            <option value="">Sort by Desc:</option>
+            <option value="">Sort by Dsc:</option>
             {sortOptions.map((item, index) => (
               <option value={item} key={index}>
                 {item}
               </option>
             ))}
           </select>
-        </div>
-        <div>
-          <button onClick={() => someCategory("saree" && "shirt")}>
-            {" "}
-            someCategory{" "}
-          </button>
-          <button onClick={() => handleFilter("shirt")}> shirt </button>
-          <button onClick={() => handleFilter("saree")}> saree </button>
         </div>
         <form action="" onSubmit={handleSearch}>
           <input

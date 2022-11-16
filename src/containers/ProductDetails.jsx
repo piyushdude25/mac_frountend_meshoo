@@ -100,6 +100,8 @@ const ProductDetails = () => {
 
   return (
     <div className="ui grid container" key={id}>
+      <br />
+      <br />
       {cart === undefined ? (
         <img
           src="http://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Social_dino-with-hat.gif"
@@ -120,7 +122,6 @@ const ProductDetails = () => {
               <img className="imgs" src={img3} alt={name} />
             </div>
           </div>
-
           <div className="rightSide border">
             <div className="">
               <h2>{name}</h2>
