@@ -32,14 +32,14 @@ const ProductDetails = () => {
   // }, []);
 
   // axios
-  // .get(`https://db-server-mesho.herokuapp.com/products/${id}`)
+  // .get(`https://db-server-meshoo.onrender.com/products/${id}`)
   // .then(({ data }) => {
   //   setCart(data);
   // });
 
   useEffect(() => {
     axios
-      .get(`https://db-server-mesho.herokuapp.com/products/${id}`)
+      .get(`https://db-server-meshoo.onrender.com/products/${id}`)
       // .get(`http://localhost:8000/products/${id}`)
       .then(({ data }) => {
         setCart(data);
@@ -90,7 +90,7 @@ const ProductDetails = () => {
   //     img1: cart.img1,
   //   };
   //   axios
-  //   .post("https://db-server-mesho.herokuapp.com/cartproduct", payload)
+  //   .post("https://db-server-meshoo.onrender.com/cartproduct", payload)
   //   // .post("http://localhost:8000/cart", payload)
   //   .then(({data})=> {dispatch(addToCart()) })
   //   alert("Item added to Cart")

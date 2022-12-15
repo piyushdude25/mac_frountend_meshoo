@@ -28,7 +28,7 @@ const ProductPage = () => {
   //////////for sorting.....................................................................................
   //  const handleSorted =(order)=>{
   //   axios
-  //   .get(`https://db-server-mesho.herokuapp.com/products?_sort=price&_order=${order}`)
+  //   .get(`https://db-server-meshoo.onrender.com/products?_sort=price&_order=${order}`)
   //   .then(({data})=>{
   //       // console.log("sorting:",data)
 
@@ -54,7 +54,7 @@ const ProductPage = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     return await axios
-      .get(`https://db-server-mesho.herokuapp.com/products?q=${value}`)
+      .get(`https://db-server-meshoo.onrender.com/products?q=${value}`)
       .then(({ data }) => {
         console.log("Searchsorting...:", data);
 
@@ -73,7 +73,7 @@ const ProductPage = () => {
     setSortValue(value);
     return await axios
       .get(
-        `https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`
+        `https://db-server-meshoo.onrender.com/products?_sort=${value}&_order=asc`
       )
       // .get(`http://localhost:8000/products?_sort=${value}&_order=asc`)
       .then(({ data }) => {
@@ -90,7 +90,7 @@ const ProductPage = () => {
     setSortValue(value);
     return await axios
       .get(
-        `https://db-server-mesho.herokuapp.com/products?_sort=${value}&_order=asc`
+        `https://db-server-meshoo.onrender.com/products?_sort=${value}&_order=asc`
       )
       // .get(`http://localhost:8000/products?_sort=${value}&_order=desc`)
       .then(({ data }) => {
@@ -105,7 +105,7 @@ const ProductPage = () => {
   //filter----
   const handleFilter = async (value) => {
     return await axios
-      .get(`https://db-server-mesho.herokuapp.com/products?category=${value}`)
+      .get(`https://db-server-meshoo.onrender.com/products?category=${value}`)
       // .get(`http://localhost:8000/products?category=${value}`)
       .then(({ data }) => {
         // console.log("sorting:",data)
@@ -120,7 +120,7 @@ const ProductPage = () => {
   const someCategory = async (value) => {
     console.log("value...:", value);
     return await axios
-      .get(`https://db-server-mesho.herokuapp.com/products?category=${value}`)
+      .get(`https://db-server-meshoo.onrender.com/products?category=${value}`)
       .then(({ data }) => {
         console.log("sorting:", data);
 

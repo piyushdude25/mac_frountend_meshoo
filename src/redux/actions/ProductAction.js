@@ -83,7 +83,7 @@ export const Login_detail = (data) => ({
 export const addToCart = (data) => {
   return async (dispatch) => {
     const cartData = await axios
-      .post("https://db-server-mesho.herokuapp.com/cartproduct", data)
+      .post("https://db-server-meshoo.onrender.com/cartproduct", data)
       .catch((e) => {
         console.log(e);
         alert("Item Allready added to Cart");
@@ -110,7 +110,7 @@ export const addToCart = (data) => {
 export const getCartData = () => {
   return async (dispatch) => {
     const cartData = await axios.get(
-      "https://db-server-mesho.herokuapp.com/cartproduct"
+      "https://db-server-meshoo.onrender.com/cartproduct"
     );
     console.log("cartDataaaaaaaaaa", cartData.data);
 
@@ -132,7 +132,7 @@ export const getCartData = () => {
 export const deleteCartData = (id) => {
   return async (dispatch) => {
     const dcartData = await axios.delete(
-      `https://db-server-mesho.herokuapp.com/cartproduct/${id}`
+      `https://db-server-meshoo.onrender.com/cartproduct/${id}`
     );
     console.log("cartData...", dcartData);
 
